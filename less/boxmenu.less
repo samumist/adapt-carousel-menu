@@ -19,33 +19,31 @@
 	.menu-container-inner {
 		padding:@menu-body-padding;
 		display: inline-block;
+		position: relative;
+		width: 100%;
 	}
 
 	.menu-item {
 		.responsive-medium;
 		.responsive-small;
-		width:50%;
-		float:left;
-        .dir-rtl & {
-            float:right;
-        }
 		margin-top:@menu-body-padding-bottom;
 		margin-bottom:20px;
 
 		margin: 0px !important;
 		display: inline-block;
 		position: relative;
-		background-size: cover;
-		background-repeat: no-repeat;
-		background-position: center;
+		background-size: cover !important;
+		background-repeat: no-repeat !important;
+		background-position: center !important;
+		background-attachment: fixed !important;
 
 
 		&.nth-child-even{
 			.menu-item-inner{
-				margin-left:0%;
+				margin-left:0% !important;
 		        .dir-rtl & {
 		            margin-left:inherit;
-		            margin-right:0%;
+		            margin-right:0% !important;
 		        }
 			}
 		}
@@ -54,10 +52,10 @@
 			clear: both;
 			
 			.menu-item-inner {
-				margin-right:0%;
+				margin-right:0% !important;
                 .dir-rtl & {
                     margin-right:inherit;
-                    margin-left:0%;
+                    margin-left:0% !important;
                 }
 			}
 		}
@@ -116,7 +114,9 @@
 	}
 }
 
-
+@media all and (max-width:1024px) {
+	.menu .menu-item {background-attachment: scroll !important;}
+}
 
 @media all and (max-width:760px) {
 	.menu-title-inner{
@@ -134,7 +134,6 @@
 		}
 
 		.menu-item{
-			width:100%;
 			margin-bottom:20px;
 			
 			&.nth-child-even, &.nth-child-odd{
