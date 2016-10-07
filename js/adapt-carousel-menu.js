@@ -28,7 +28,6 @@ define([
 
         className: function() {
             var nthChild = this.model.get("_nthChild");
-            this.$('.menu-container').css({'width' : + nthChild + '00%','display' : 'inline-block','position' : 'relative'});
             return [
                 'menu-item',
                 'menu-item-' + this.model.get('_id') ,
@@ -39,6 +38,7 @@ define([
                 'nth-child-' + nthChild,
                 nthChild % 2 === 0 ? 'nth-child-even' : 'nth-child-odd'
             ].join(' ');
+            
         },
 
         preRender: function() {
@@ -48,6 +48,8 @@ define([
 
         postRender: function() {
             var graphic = this.model.get('_graphic');
+            var nthChild = this.model.get("_nthChild");
+            var nthdivid = 100 / nthChild;
             if (graphic && graphic.src && graphic.src.length > 0) {
                 this.$el.imageready(_.bind(function() {
                     this.setReadyStatus();
@@ -55,6 +57,9 @@ define([
             } else {
                 this.setReadyStatus();
             }
+            $('.menu-container').css({'width' : '' + this.model.get("_nthChild") + '00%','display' : 'inline-block','position' : 'relative'});
+            $('.nth-child-'+ nthChild ).css({'background' : 'url('+ graphic.src +')'});
+            $('.menu-item' ).css({'width' : nthdivid + '%'});
         },
 
         onClickMenuItemButton: function(event) {
