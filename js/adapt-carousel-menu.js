@@ -49,6 +49,9 @@ define([
         postRender: function() {
             var graphic = this.model.get('_graphic');
             var nthChild = this.model.get("_nthChild");
+            var minus150per = 150 - this.model.get("_nthChild") * 100;
+            var add80px = this.model.get("_nthChild") * 80 - 80;
+            var add40px = 30 - this.model.get("_nthChild") * 40;
             var nthdivid = 100 / nthChild;
             if (graphic && graphic.src && graphic.src.length > 0) {
                 this.$el.imageready(_.bind(function() {
@@ -59,7 +62,9 @@ define([
             }
             $('.menu-container').css({'width' : '' + this.model.get("_nthChild") + '00%','display' : 'inline-block','position' : 'relative'});
             $('.nth-child-'+ nthChild ).css({'background' : 'url('+ graphic.src +')'});
-            $('.menu-item' ).css({'width' : nthdivid + '%'});
+            $('.nth-child-'+ nthChild + ' .menu-item-inner').css({'left' : '' + minus150per + '%', 'margin-left' : '' + add80px + 'px'});
+            $('.duration-bar' ).css({'margin-left' : add40px + 'px'});
+            $('.menu-item' ).css({'width' : nthdivid + '%', 'height' : $( window ).height() + 'px'});
         },
 
         onClickMenuItemButton: function(event) {
