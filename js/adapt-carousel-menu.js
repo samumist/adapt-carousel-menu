@@ -65,6 +65,9 @@ define([
             $('.nth-child-'+ nthChild + ' .menu-item-inner').css({'left' : '' + minus150per + '%', 'margin-left' : '' + add80px + 'px'});
             $('.duration-bar' ).css({'margin-left' : add40px + 'px'});
             $('.menu-item' ).css({'width' : nthdivid + '%', 'height' : $( window ).height() + 'px'});
+            $(window).resize(function() {
+                $('.menu-item' ).css({'width' : nthdivid + '%', 'height' : $( window ).height() + 'px'});
+            });
         },
 
         onClickMenuItemButton: function(event) {
