@@ -49,14 +49,17 @@ define([
         postRender: function() {
             var graphic = this.model.get('_graphic');
             var nthChild = this.model.get("_nthChild");
+            var totalnthchild = $('.duration-bar').length;
+            
             var minus150per = 150 - this.model.get("_nthChild") * 100;
             var add80px = this.model.get("_nthChild") * 80 - 80;
-            var add40px = 32 - this.model.get("_nthChild") * 40;
-            var add40pxB = 64 - this.model.get("_nthChild") * 40;
-            var add40pxC = 96 - this.model.get("_nthChild") * 40;
-            var elevenplus = add40px * 2 + this.model.get("_nthChild") * 18.35;
-            var elevenplusB = add40px * 2 + this.model.get("_nthChild") * 38.93;
+            var add40px = 32 - totalnthchild * 40;
+            var add40pxB = 48 - totalnthchild * 40;
+            var add40pxC = 96 - totalnthchild * 40;
+            var divid40px = totalnthchild / 10;
+            var circlerange = totalnthchild * 107.504;
             var nthdivid = 100 / nthChild;
+
             if (graphic && graphic.src && graphic.src.length > 0) {
                 this.$el.imageready(_.bind(function() {
                     this.setReadyStatus();
@@ -72,23 +75,21 @@ define([
             $(window).resize(function() {
                 $('.menu-item' ).css({'width' : nthdivid + '%', 'height' : $( window ).height() + 'px'});
             });
-
-            var totalnthchild = $('.duration-bar').length;
             
             if (totalnthchild <= 10) {
                 $('.duration-bar').css({'margin-left' : add40px + 'px'});
             } else if (totalnthchild <= 20) {
-                $('.duration-bar').css({'margin-left' : add40pxB / 2 + 'px','bottom' : '80px'});
-                $('.duration-bar:eq(10)').css({'margin-left' : elevenplus + 'px','bottom' : '0px'});
-                $('.duration-bar:eq(11)').css({'margin-left' : elevenplus + 'px','bottom' : '0px'});
-                $('.duration-bar:eq(12)').css({'margin-left' : elevenplus + 'px','bottom' : '0px'});
-                $('.duration-bar:eq(13)').css({'margin-left' : elevenplus + 'px','bottom' : '0px'});
-                $('.duration-bar:eq(14)').css({'margin-left' : elevenplus + 'px','bottom' : '0px'});
-                $('.duration-bar:eq(15)').css({'margin-left' : elevenplus + 'px','bottom' : '0px'});
-                $('.duration-bar:eq(16)').css({'margin-left' : elevenplus + 'px','bottom' : '0px'});
-                $('.duration-bar:eq(17)').css({'margin-left' : elevenplus + 'px','bottom' : '0px'});
-                $('.duration-bar:eq(18)').css({'margin-left' : elevenplus + 'px','bottom' : '0px'});
-                $('.duration-bar:eq(19)').css({'margin-left' : elevenplus + 'px','bottom' : '0px'});
+                $('.duration-bar').css({'margin-left' :  add40pxB / divid40px + 'px','bottom' : '80px'});
+                $('.duration-bar:eq(10)').css({'margin-left' : '-' + circlerange + 'px','bottom' : '0px'});
+                $('.duration-bar:eq(11)').css({'margin-left' : '-' + circlerange + 'px','bottom' : '0px'});
+                $('.duration-bar:eq(12)').css({'margin-left' : '-' + circlerange + 'px','bottom' : '0px'});
+                $('.duration-bar:eq(13)').css({'margin-left' : '-' + circlerange + 'px','bottom' : '0px'});
+                $('.duration-bar:eq(14)').css({'margin-left' : '-' + circlerange + 'px','bottom' : '0px'});
+                $('.duration-bar:eq(15)').css({'margin-left' : '-' + circlerange + 'px','bottom' : '0px'});
+                $('.duration-bar:eq(16)').css({'margin-left' : '-' + circlerange + 'px','bottom' : '0px'});
+                $('.duration-bar:eq(17)').css({'margin-left' : '-' + circlerange + 'px','bottom' : '0px'});
+                $('.duration-bar:eq(18)').css({'margin-left' : '-' + circlerange + 'px','bottom' : '0px'});
+                $('.duration-bar:eq(19)').css({'margin-left' : '-' + circlerange + 'px','bottom' : '0px'});
             } else if (totalnthchild <= 30) {
                 $('.duration-bar').css({'margin-left' : add40pxC / 3 + 'px','bottom' : '160px'});
                 $('.duration-bar:eq(10)').css({'margin-left' : elevenplusB + 'px','bottom' : '80px'});
