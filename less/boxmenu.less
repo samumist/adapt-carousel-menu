@@ -1,6 +1,8 @@
+html {overflow-y: hidden;}
+
 .menu.menu-course{
 	width: 100%;
-	overflow-x: scroll;
+	overflow-x: hidden;
 	margin-top: -64px;
 }
 
@@ -20,7 +22,7 @@
 	margin-top: -40px;
 	background-color: rgba(50,50,50,0.9);
 	color: @white;
-	border: solid 1px @white;
+	border: solid 2px @white;
 	-webkit-transition: background-color .25s ease-in, color .25s ease-in, border-color .25s ease-in;
 	-moz-transition: background-color .25s ease-in, color .25s ease-in, border-color .25s ease-in;
 	-ms-transition: background-color .25s ease-in, color .25s ease-in, border-color .25s ease-in;
@@ -30,7 +32,7 @@
 .menu-item-control:hover {
 	background-color: rgba(255,255,255,0.9);
 	color: @black;
-	border: solid 1px @black;
+	border: solid 2px @white;
 }
 .menu-item-control-hide {display:none !important;}
 .menu-item-control.menu-item-control-left {left: 0;}
@@ -40,6 +42,7 @@
 	height: 80px;
 	width: 44px;
 	line-height: 80px;
+	font-weight: bold;
 }
 .icon-controls-left:hover:before {
 	color: @black;
@@ -51,6 +54,7 @@
 	height: 80px;
 	width: 44px;
 	line-height: 80px;
+	font-weight: bold;
 }
 .icon-controls-right:hover:before {
 	color: @black;
@@ -124,8 +128,8 @@
 		width: auto;
 		display: block;
 		padding: 2%;
-		border-radius: 10px;
-		border: @white solid 1px;
+		border-radius: 0px;
+		border: none;
 	}
 
 	.menu-item-inner {
@@ -159,7 +163,7 @@
 
 	.menu-item-button {
 		padding:@menu-body-padding;
-		
+
 		a {
 			text-decoration: none;
 			background-color:@white;
@@ -178,20 +182,44 @@
 			}
 		}
 	}
-	.menu-item-button button {
-			background-color:@white !important;
-			color:@black !important;
-			border: @black solid 1px !important;
+
+	.menu-box-info .menu-item-button button {
+		background-color:@white;
+		color:@black;
+		border: @white solid 2px;
+		font-weight: 500;
+
+		&:hover {
+			background-color: #E31F26;
+			color:@white;
+			border: @white solid 2px;
+		}
+
+		&.visited {
+			background-color: rgba(175,175,175,0.9);
+			color: @white;
+			border: @white solid 2px;
+		}
 	}
-	.menu-item-button button:hover {
-			background-color: @black !important;
-			color:@white !important;
-			border: @black solid 1px !important;
+
+	.locked .menu-item-inner, .locked a.numspotlink {
+		color: transparent !important;
 	}
-	.menu-item-button button.visited {
-			background-color: rgba(175,175,175,0.9) !important;
-			color: @black !important;
-			border: @black solid 1px !important;
+
+	.locked .duration-bar .numberspot:before {
+		color: @white;
+		content:'\e631';
+		font-family: 'vanilla';
+	    speak: none;
+	    font-style: normal;
+	    font-weight: normal;
+	    font-variant: normal;
+	    text-transform: none;
+	    line-height: 1;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
+	    display: block;
+    	line-height: 40px;
 	}
 
 	.menu-item-duration {
@@ -227,7 +255,7 @@
 		border-radius: 60px !important;
 		width: 60px !important;
 		height: 60px !important;
-		background-color: rgba(50,50,50,0.3) !important;
+		background-color: rgba(50,50,50,0.2) !important;
 		border: none !important;
 		-webkit-transform: rotate(-90deg);
 	    -moz-transform: rotate(-90deg);
@@ -244,18 +272,29 @@
 		line-height: 44px;
 		display: block;
 		position: absolute;
-		background-color: rgba(50,50,50,0.9);
-		margin: -19px -17px;
+		background-color: #E31F26;
+		margin: -20px -18px;
 		font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 		font-weight: bold;
 		font-size: 20px;
 		z-index: 10;
-		border: solid 1px @white;
+		border: solid 2px @white;
 	}
+	.active .duration-bar .numberspot{
+		background-color: #8b8b8b;
+	}
+
+	a.numspotlink {color: @white;}
+	a.numspotlink:hover {color: rgba(50,50,50,0.85);}
+
 	.duration-bar .page-level-progress-menu-item-indicator-bar{
 		border-radius: 0px !important;
 		height: 60px !important;
 	}
+}
+
+@media all and (max-width:1024px) {
+	.menu.menu-course {overflow-x: scroll;}
 }
 
 @media all and (max-width:760px) {
@@ -286,4 +325,24 @@
 			}
 		}
    	}
+}
+
+@media all and (max-width:500px) {
+	.menu .menu-item-body-inner p {
+	    overflow: hidden;
+	    position: relative;
+	    width: 80%;
+	    left: 10%;
+	    line-height: 1.3em;
+	    max-height: 24.4em;
+	    text-align: justify;
+	    margin-right: -1em;
+	    padding-right: 1em;
+	}
+	.menu-item-body-inner p:before {
+	    content: '...';
+	    position: absolute;
+	    right: 0;
+	    bottom: 0;
+	}
 }
