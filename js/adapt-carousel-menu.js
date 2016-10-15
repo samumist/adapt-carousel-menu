@@ -78,90 +78,89 @@ define([
 
             //ANIMATE SLIDER LEFT OR RIGHT
             var count = 0;
-            var mycount = count+1;
             var $item = $('.nth-child-'+ nthChild );
             $('.nth-child-1' ).addClass('active');
 
-          $('a.menu-item-control-right').click(function(){
-            $item.animate({'left':'-=' + $( window ).width() + 'px'});
-            
-            count += 1;
-            mycount += 1;
-
-            $('.menu-item' ).removeClass('active');
-            $('.nth-child-'+ mycount ).addClass('active');
-
-            if (count === 0) {
-                $('a.menu-item-control-left').addClass('menu-item-control-hide');
-            }else{
-                $('a.menu-item-control-left').removeClass('menu-item-control-hide');
-            }
-            
-            if (count === nthChild- 1) {
-                $('a.menu-item-control-right').addClass('menu-item-control-hide');
-            }else{
-                $('a.menu-item-control-right').removeClass('menu-item-control-hide');
-            }
-
-          });
-
-           $('a.menu-item-control-left').click(function(){      
-            $item.animate({'left':'+=' + $( window ).width() + 'px'});
-
-            count -= 1;
-            mycount -= 1;
-
-            $('.menu-item' ).removeClass('active');
-            $('.nth-child-'+ mycount ).addClass('active');
-
-            if (count === 0) {
-                $('a.menu-item-control-left').addClass('menu-item-control-hide');
-            }else{
-                $('a.menu-item-control-left').removeClass('menu-item-control-hide');
-            }
-            
-            if (count === nthChild - 1) {
-                $('a.menu-item-control-right').addClass('menu-item-control-hide');
-            }else{
-                $('a.menu-item-control-right').removeClass('menu-item-control-hide');
-            }
-
-          });
-
-
-           //CIRCLE NUMBERS SPOT LINKS FUNCTIONALITY
+            //CIRCLE NUMBERS SPOT LINKS FUNCTIONALITY
             var circlecount = nthChild+1;
-           if (nthChild === 0) {
+            if (nthChild === 0) {
                $('a.numspotlink:eq(' + nthChild + ')').click(function(){      
-                    $('.menu-container').animate({'margin-left':'-' + nthChild + '00%'}).stop(false, true);
+                    $('.menu-container').animate({'margin-left':'-' + nthChild + '00%'});//.stop(false, true);
                     $('a.menu-item-control-left').addClass('menu-item-control-hide');
                     $('.menu-item' ).removeClass('active');
                     $('.nth-child-' + circlecount ).addClass('active');
                });
             }else{
                 $('a.numspotlink:eq(' + nthChild + ')').click(function(){      
-                    $('.menu-container').animate({'margin-left':'-' + nthChild + '00%'}).stop(false, true);
+                    $('.menu-container').animate({'margin-left':'-' + nthChild + '00%'});//.stop(false, true);
                     $('a.menu-item-control-left').removeClass('menu-item-control-hide');
                     $('.menu-item' ).removeClass('active');
                     $('.nth-child-' + circlecount ).addClass('active');
                 });
-            }
+            } 
+            if (totalnthchild <= 10) {
+                $('.duration-bar').css({'margin-left' : add40px + 'px'});
+            } else {
+                alert('This Menu Only Allows 30 Pages! Please use the BoxMenu Otherwise...');
+            } 
+            
+
+            //PRESS RIGHT BUTTON
+            $('a.menu-item-control-right').click(function(){
+                $item.animate({'left':'-=' + $( window ).width() + 'px'});
+                
+                var mycount = count+1;
+                count += 1;
+                mycount += 1;
+
+                $('.menu-item' ).removeClass('active');
+                $('.nth-child-'+ mycount ).addClass('active');
+
+                if (count === 0) {
+                    $('a.menu-item-control-left').addClass('menu-item-control-hide');
+                }else{
+                    $('a.menu-item-control-left').removeClass('menu-item-control-hide');
+                }
+                
+                if (count === nthChild- 1) {
+                    $('a.menu-item-control-right').addClass('menu-item-control-hide');
+                }else{
+                    $('a.menu-item-control-right').removeClass('menu-item-control-hide');
+                }
+
+            });
+            //PRESS LEFT BUTTON
+            $('a.menu-item-control-left').click(function(){      
+                $item.animate({'left':'+=' + $( window ).width() + 'px'});
+
+                var mycount = count+1;
+                count -= 1;
+                mycount -= 1;
+
+                $('.menu-item' ).removeClass('active');
+                $('.nth-child-'+ mycount ).addClass('active');
+
+                if (count === 0) {
+                    $('a.menu-item-control-left').addClass('menu-item-control-hide');
+                }else{
+                    $('a.menu-item-control-left').removeClass('menu-item-control-hide');
+                }
+                
+                if (count === nthChild - 1) {
+                    $('a.menu-item-control-right').addClass('menu-item-control-hide');
+                }else{
+                    $('a.menu-item-control-right').removeClass('menu-item-control-hide');
+                }
+
+            });
 
             //GET BACKGROUND TO MATCH BROWSER ON RESIZE
             $('.menu-item' ).css({'width' : $( window ).width() + 'px', 'height' : $( window ).height() + 'px'});
             $(window).resize(function() {
                 $('.menu-item' ).css({'width' : $( window ).width() + 'px', 'height' : $( window ).height() + 'px'});
-                $item.animate({'left':'0px'});
-                $('.menu-item' ).removeClass('active');
-                $('.nth-child-1' ).addClass('active');
-                $('a.menu-item-control-left').addClass('menu-item-control-hide');
+                $('.menu-item' ).css({'left':'-' + count * $( window ).width() + 'px'});
             });
-            
-            if (totalnthchild <= 10) {
-                $('.duration-bar').css({'margin-left' : add40px + 'px'});
-            } else {
-                alert('This Menu Only Allows 30 Pages! Please use the BoxMenu Otherwise...');
-            }
+
             
         },
 
