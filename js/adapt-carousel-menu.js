@@ -62,7 +62,7 @@ define([
             } else {
                 this.setReadyStatus();
             }
-            $('.menu-container').css({'width' : '' + this.model.get("_nthChild") + '00%','display' : 'inline-block','position' : 'relative'});
+            $('.menu-container').css({'width' : '' + nthChild + '00%','display' : 'inline-block','position' : 'relative'});
             $('.nth-child-'+ nthChild ).css({'background' : 'url('+ graphic.src +')'}).attr('name', 'nth-child-' + nthChild);
             $('.nth-child-'+ nthChild + ' .menu-item-inner').css({'left' : '' + minus150per + '%', 'margin-left' : '' + add80px + 'px'});
             $('.menu-item.nth-child-'+ nthChild + ' .numberspot').text('' + nthChild );
@@ -78,13 +78,14 @@ define([
 
             //ANIMATE SLIDER LEFT OR RIGHT
             var count = 0;
+            var mycount = count+1;
             var $item = $('.nth-child-'+ nthChild );
             $('.nth-child-1' ).addClass('active');
 
             //CIRCLE NUMBERS SPOT LINKS FUNCTIONALITY
             var makezer0 = nthChild-1;
             $('a.numspotlink:eq(' + makezer0 + ')').click(function(){      
-                $('.menu-container').animate({'margin-left':'-' + makezer0 + '00%'});//.stop(false, true);
+                $('.menu-item').animate({'left':'-' + $( window ).width()*makezer0 + 'px'});
                 $('a.menu-item-control-left').removeClass('menu-item-control-hide');
                 $('.menu-item' ).removeClass('active');
                 $('.nth-child-' + nthChild ).addClass('active');
@@ -98,13 +99,12 @@ define([
             
 
             //PRESS RIGHT BUTTON
-            $('a.menu-item-control-right').click(function(){
+            $('.menu-item-control-right').click(function(){
                 $item.animate({'left':'-=' + $( window ).width() + 'px'});
                 
-                var mycount = count+1;
                 count += 1;
                 mycount += 1;
-
+                
                 $('.menu-item' ).removeClass('active');
                 $('.nth-child-'+ mycount ).addClass('active');
 
@@ -118,14 +118,13 @@ define([
                     $('a.menu-item-control-right').addClass('menu-item-control-hide');
                 }else{
                     $('a.menu-item-control-right').removeClass('menu-item-control-hide');
-                }
+                } 
 
             });
             //PRESS LEFT BUTTON
-            $('a.menu-item-control-left').click(function(){      
+            $('.menu-item-control-left').click(function(){      
                 $item.animate({'left':'+=' + $( window ).width() + 'px'});
 
-                var mycount = count+1;
                 count -= 1;
                 mycount -= 1;
 
