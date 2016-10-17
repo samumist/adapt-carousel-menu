@@ -108,10 +108,10 @@ define([
             });
 
 
-            if (totalnthchild <= 20) {
+            if (totalnthchild <= 13) {
                 $('.duration-bar').css({'margin-left' : add40px + 'px'});
             } else {
-                alert('This Menu Only Allows 30 Pages! Please use the BoxMenu Otherwise...');
+                alert('This Menu Only Allows 13 Pages! Please use the BoxMenu Otherwise...');
             } 
             
 
@@ -125,8 +125,8 @@ define([
                 count += 1;
                 mycount += 1;
                 
-                $('.menu-item' ).removeClass('active');
-                $('.nth-child-'+ mycount ).addClass('active');
+                $('.menu-item' ).removeClass('active');            
+                //$('.nth-child-'+ mycount ).addClass('active');
 
                 //ON MOUSE MOVE SEE IF ACTIVE ON FIRST PAGE
                 var righty = $('.nth-child-1' ).css('left');
@@ -159,7 +159,7 @@ define([
                 mycount -= 1;
 
                 $('.menu-item' ).removeClass('active');
-                $('.nth-child-'+ mycount ).addClass('active');
+                //$('.nth-child-'+ mycount ).addClass('active');
 
                 //ON CLICK SEE IF ACTIVE ON FIRST PAGE
                 var righty = $('.nth-child-1' ).css('left');
