@@ -6,8 +6,6 @@ html {overflow-y: hidden;}
 	margin-top: -64px;
 }
 
-.navigation {opacity:0;}
-
 .menu-title, .menu-body{
 	color: @inverted-foreground-color;
 	margin-bottom:@menu-title-padding-bottom;
@@ -88,7 +86,7 @@ html {overflow-y: hidden;}
 		position: relative;
 		background-size: cover !important;
 		background-repeat: no-repeat !important;
-		background-position: center !important;
+		background-position: center 60px !important;
 
 
 		&.nth-child-even{
@@ -116,11 +114,11 @@ html {overflow-y: hidden;}
 
 	.menu-box-info {
 		position: absolute;
-		width: 50%;
+		width: 60%;
 		display: block;
-		padding-left: 25%;
-		padding-right: 25%;
-		top: 25%;
+		padding-left: 20%;
+		padding-right: 20%;
+		top: 35%;
 		text-align: center;
 		z-index: 499;
 	}
@@ -160,6 +158,7 @@ html {overflow-y: hidden;}
 
 	.menu-item-body {
 		padding:@menu-body-padding;
+		text-align:left;
 	}
 
 	.menu-item-button {
