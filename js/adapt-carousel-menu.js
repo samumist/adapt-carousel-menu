@@ -80,16 +80,44 @@ define([
             var count = 0;
             var mycount = count+1;
             var $item = $('.nth-child-'+ nthChild );
+            var moveduration = makezer0 * $( window ).width() + add40px;
+
             $('.nth-child-1' ).addClass('active');
 
             //CIRCLE NUMBERS SPOT LINKS FUNCTIONALITY
             var makezer0 = nthChild-1;
+            var moveduration = makezer0 * $( window ).width() + add40px;
+
             $('a.numspotlink:eq(' + makezer0 + ')').click(function(){      
                 $('.menu-item').animate({'left':'-' + $( window ).width()*makezer0 + 'px'});
+                $('.duration-bar').css('margin-left');
+                $('.duration-bar').animate({'margin-left':'' + moveduration + 'px'});
                 $('a.menu-item-control-left').removeClass('menu-item-control-hide');
+                $('a.menu-item-control-right').removeClass('menu-item-control-hide');
                 $('.menu-item' ).removeClass('active');
-                $('.nth-child-' + nthChild ).addClass('active');
+                $('.nth-child-'+ nthChild ).addClass('active');
+                $(window).resize(function() {
+                    var makezer0b = nthChild-1;
+                    var resizewin2 = makezer0b * $( window ).width();
+                    var add40px3 = 32 - nthChild * 40;
+                    var calwin40px2 = add40px3 + resizewin2;
+                    $('.nth-child-' + nthChild ).css('left');
+                    $('.menu-item' ).css({'left':'-' + makezer0b * $( window ).width() + 'px'});
+                    $('.duration-bar').css('margin-left');
+                    $('.duration-bar').animate({'margin-left':'' + calwin40px2 + 'px'}).stop(false,true);
+                });
             });
+
+            //Hide LEFT arrow if number 1 is clicked
+            $('a.numspotlink:eq(0)').click(function(){     
+                $('a.menu-item-control-left').addClass('menu-item-control-hide');
+            });
+            
+            //Hide RIGHT arrow if last number is clicked
+            $('.menu-item:last-child a.numspotlink').click(function(){      
+                $('a.menu-item-control-right').addClass('menu-item-control-hide');
+            });
+
 
             if (totalnthchild <= 10) {
                 $('.duration-bar').css({'margin-left' : add40px + 'px'});
@@ -100,6 +128,9 @@ define([
 
             //PRESS RIGHT BUTTON
             $('.menu-item-control-right').click(function(){
+                $('.duration-bar').css('margin-left');
+                $('.duration-bar').animate({'margin-left':'+=' + $( window ).width() /totalnthchild + 'px'}).stop(false,true);
+                $item.css('left');
                 $item.animate({'left':'-=' + $( window ).width() + 'px'});
                 
                 count += 1;
@@ -130,6 +161,9 @@ define([
             });
             //PRESS LEFT BUTTON
             $('.menu-item-control-left').click(function(){      
+                $('.duration-bar').css('margin-left');
+                $('.duration-bar').animate({'margin-left':'-=' + $( window ).width() /totalnthchild + 'px'}).stop(false,true);
+                $item.css('left');
                 $item.animate({'left':'+=' + $( window ).width() + 'px'});
 
                 count -= 1;
@@ -162,8 +196,14 @@ define([
             //GET BACKGROUND TO MATCH BROWSER ON RESIZE
             $('.menu-item' ).css({'width' : $( window ).width() + 'px', 'height' : $( window ).height() + 'px'});
             $(window).resize(function() {
+                var resizewin = count * $( window ).width();
+                var add40px2 = 32 - nthChild * 40;
+                var calwin40px = add40px2 + resizewin;
                 $('.menu-item' ).css({'width' : $( window ).width() + 'px', 'height' : $( window ).height() + 'px'});
-                $('.menu-item' ).css({'left':'-' + count * $( window ).width() + 'px'});
+                $('.nth-child-' + nthChild ).css('left');
+                $('.menu-item' ).css({'left':'-' + resizewin + 'px'});
+                $('.duration-bar').css('margin-left');
+                $('.duration-bar').css({'margin-left':'' + calwin40px + 'px'});
             });
 
             
