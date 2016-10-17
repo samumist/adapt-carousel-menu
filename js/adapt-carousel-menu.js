@@ -80,7 +80,6 @@ define([
             var count = 0;
             var mycount = count+1;
             var $item = $('.nth-child-'+ nthChild );
-            var moveduration = makezer0 * $( window ).width() + add40px;
 
             $('.nth-child-1' ).addClass('active');
 
@@ -96,16 +95,6 @@ define([
                 $('a.menu-item-control-right').removeClass('menu-item-control-hide');
                 $('.menu-item' ).removeClass('active');
                 $('.nth-child-'+ nthChild ).addClass('active');
-                $(window).resize(function() {
-                    var makezer0b = nthChild-1;
-                    var resizewin2 = makezer0b * $( window ).width();
-                    var add40px3 = 32 - nthChild * 40;
-                    var calwin40px2 = add40px3 + resizewin2;
-                    $('.nth-child-' + nthChild ).css('left');
-                    $('.menu-item' ).css({'left':'-' + makezer0b * $( window ).width() + 'px'});
-                    $('.duration-bar').css('margin-left');
-                    $('.duration-bar').animate({'margin-left':'' + calwin40px2 + 'px'}).stop(false,true);
-                });
             });
 
             //Hide LEFT arrow if number 1 is clicked
@@ -119,7 +108,7 @@ define([
             });
 
 
-            if (totalnthchild <= 10) {
+            if (totalnthchild <= 20) {
                 $('.duration-bar').css({'margin-left' : add40px + 'px'});
             } else {
                 alert('This Menu Only Allows 30 Pages! Please use the BoxMenu Otherwise...');
@@ -204,6 +193,15 @@ define([
                 $('.menu-item' ).css({'left':'-' + resizewin + 'px'});
                 $('.duration-bar').css('margin-left');
                 $('.duration-bar').css({'margin-left':'' + calwin40px + 'px'});
+
+                $('a.numspotlink:eq(' + makezer0 + ')').click(function(){      
+                    var makezer0b = nthChild-1;
+                    var resizewin2 = makezer0b * $( window ).width();
+                    var add40px3 = 40*totalnthchild-32;
+                    $('.nth-child-' + nthChild ).css('left');
+                    $('.menu-item' ).css({'left':'-' + resizewin2 + 'px'});
+                    $('.duration-bar').animate({'margin-left':'' + resizewin2 - add40px3 + 'px'}).stop(false,true);
+                });
             });
 
             
