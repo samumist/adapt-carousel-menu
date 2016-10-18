@@ -27,10 +27,6 @@ This is a Carousel type menu which is different from the box styled menu when yo
 >**src** (string): File name (including path) of the image. Path should be relative to the *src* folder (e.g., *"course/en/images/t05.jpg"*).  
        
 **linkText** (string): This text is displayed on the menu item's link/button.  
-
-**durationLabel** (string): Optional text which precedes **duration** (e.g., `"Duration:"`).  
-
-**duration** (string): Optional text which follows **durationLabel** (e.g., `"2 mins"`).  
        
 <div float align=right><a href="#top">Back to Top</a></div>  
 
