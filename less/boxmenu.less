@@ -282,6 +282,8 @@ html {overflow-y: hidden;}
 	}
 	.active .duration-bar .numberspot{
 		background-color: #8b8b8b;
+	    -webkit-transition: background-color 0.5s, -webkit-transform 0.5s;
+		transition: background-color 0.5s, transform 0.5s;
 	}
 
 	a.numspotlink {color: @white;}
@@ -291,6 +293,10 @@ html {overflow-y: hidden;}
 		border-radius: 0px !important;
 		height: 60px !important;
 	}
+}
+
+@-moz-document url-prefix() { 
+  .menu-item-control {display:none !important;}
 }
 
 @media all and (max-width:1024px) {
