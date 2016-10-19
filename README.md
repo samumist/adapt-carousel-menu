@@ -41,7 +41,7 @@ Firefox has issues with left and right arrows so I turned them off and only sequ
 ----------------------------
 **Version number:**  2.0.5   
 **Framework versions:**  2.0     
-**Author / maintainer:** Adapt Core Team with [contributors](https://github.com/mike-st/adapt-carousel-menu/graphs/contributors)  
+**Author / maintainer:** Mike Stevens work based off of BoxMenu from Adapt Team [contributors](https://github.com/mike-st/adapt-carousel-menu/graphs/contributors)  
 **Accessibility support:** WAI AA   
 **RTL support:** yes  
 **Cross-platform coverage:** Chrome, Chrome for Android, Firefox (ESR + latest version), Edge 12, IE 11, IE10, IE9, IE8, IE Mobile 11, Safari for iPhone (iOS 8+9), Safari for iPad (iOS 8+9), Safari 8, Opera 
