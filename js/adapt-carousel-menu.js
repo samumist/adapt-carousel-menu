@@ -96,6 +96,13 @@ define([
                 $('.nth-child-'+ nthChild ).addClass('active');
             });
 
+            //IF ONLY 1 OR 2 ITEMS
+            if ($('.duration-bar').length <= 2) {
+                $('.menu-item-control').hide();
+            } else {
+                $('.menu-item-control').show();
+            } 
+            
             //Hide LEFT arrow if number 1 is clicked
             $('a.numspotlink:eq(0)').click(function(){     
                 $('a.menu-item-control-left').addClass('menu-item-control-hide');
