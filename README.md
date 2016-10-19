@@ -36,7 +36,7 @@ Several menu-related elements are assigned a label using the [aria-label](https:
 
 ## Limitations
  
-Firefox has issues with the sequiential numbers displaying but arrows work still.
+Firefox has issues with left and right arrows so I turned them off and only sequiential number circles will display in the Firefox browser.
 
 ----------------------------
 **Version number:**  2.0.5   
