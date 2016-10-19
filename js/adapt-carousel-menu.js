@@ -78,7 +78,6 @@ define([
 
             //ANIMATE SLIDER LEFT OR RIGHT
             var count = 0;
-            var mycount = count+1;
             var $item = $('.nth-child-'+ nthChild );
 
             $('.nth-child-1' ).addClass('active');
@@ -123,10 +122,19 @@ define([
                 $item.animate({'left':'-=' + $( window ).width() + 'px'});
                 
                 count += 1;
-                mycount += 1;
                 
-                $('.menu-item' ).removeClass('active');            
-                //$('.nth-child-'+ mycount ).addClass('active');
+                //SEE WHAT PAGE YOU ARE ON
+                var seepgminus = $( window ).width();
+                var seepg = $item.css('left');
+                var seepgstring =  parseInt(seepg.replace(/px/g, ''), 10);
+                var seepgcal = seepgstring - seepgminus;
+                var seepgtotal = $( window ).width()-seepgminus*nthChild;
+                if ((seepgcal + 'px' ==  seepgtotal + 'px')) {
+                    $('.menu-item' ).removeClass('active');
+                    $item.addClass('active');
+                }else{
+                    //alert('seepage is ' + seepgcal + ' seepgtotal is ' + seepgtotal);
+                };
 
                 //ON MOUSE MOVE SEE IF ACTIVE ON FIRST PAGE
                 var righty = $('.nth-child-1' ).css('left');
@@ -156,10 +164,19 @@ define([
                 $item.animate({'left':'+=' + $( window ).width() + 'px'});
 
                 count -= 1;
-                mycount -= 1;
 
-                $('.menu-item' ).removeClass('active');
-                //$('.nth-child-'+ mycount ).addClass('active');
+                //SEE WHAT PAGE YOU ARE ON
+                var seepgminus = $( window ).width();
+                var seepg = $item.css('left');
+                var seepgstring =  parseInt(seepg.replace(/px/g, ''), 10);
+                var seepgcal = seepgstring + seepgminus;
+                var seepgtotal = $( window ).width()-seepgminus*nthChild;
+                if ((seepgcal + 'px' ==  seepgtotal + 'px')) {
+                    $('.menu-item' ).removeClass('active');
+                    $item.addClass('active');
+                }else{
+                    //alert('seepage is ' + seepgcal + ' seepgtotal is ' + seepgtotal);
+                };
 
                 //ON CLICK SEE IF ACTIVE ON FIRST PAGE
                 var righty = $('.nth-child-1' ).css('left');
