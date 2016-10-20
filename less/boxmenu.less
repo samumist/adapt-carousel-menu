@@ -295,9 +295,9 @@ html {overflow-y: hidden;}
 	}
 
 	.numspotlink .menu-tooltip{
-	    background-color: rgba(0,0,0,0.85);
+	    background-color: @black;
 	    border-radius: 5px;
-	    bottom: 100px;
+	    bottom: 110px;
 	    -webkit-box-shadow: 0 3px 10px 0 rgba(0,0,0,0.5);
 	    -moz-box-shadow: 0 3px 10px 0 rgba(0,0,0,0.5);
 	    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.5);
@@ -310,7 +310,10 @@ html {overflow-y: hidden;}
 	    padding: 10px;
 	    pointer-events: none;
 	    position: absolute;
-	    transition: all .5s ease-in;
+	    -webkit-animation-duration: 1s;
+  		animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+  		animation-fill-mode: both;
 	    width: 150px;
 	    z-index: 999;
 	    font-weight: bold;
@@ -319,7 +322,7 @@ html {overflow-y: hidden;}
 	.numspotlink .menu-tooltip:after {
 		border-left: 20px solid transparent;
 		border-right: 20px solid transparent;
-		border-top: 20px solid rgba(0,0,0,0.85);
+		border-top: 20px solid @black;
 		bottom: -15px;
 		content: '';
 		height: 0;
@@ -327,6 +330,20 @@ html {overflow-y: hidden;}
 		margin-left: -20px;
 		position: absolute;
 		width: 0;
+	}
+
+	@keyframes fadeInUp {
+	  from {
+	    opacity: 0;
+	    -webkit-transform: translate3d(0, 100%, 0);
+	    transform: translate3d(0, 100%, 0);
+	  }
+
+	  to {
+	    opacity: 1;
+	    -webkit-transform: none;
+	    transform: none;
+	  }
 	}
 }
 
