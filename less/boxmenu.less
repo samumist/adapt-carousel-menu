@@ -293,6 +293,41 @@ html {overflow-y: hidden;}
 		border-radius: 0px !important;
 		height: 60px !important;
 	}
+
+	.numspotlink .menu-tooltip{
+	    background-color: rgba(0,0,0,0.85);
+	    border-radius: 5px;
+	    bottom: 100px;
+	    -webkit-box-shadow: 0 3px 10px 0 rgba(0,0,0,0.5);
+	    -moz-box-shadow: 0 3px 10px 0 rgba(0,0,0,0.5);
+	    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.5);
+	    color: @white;
+	    display: block;
+	    left: 5px;
+	    line-height: 25px;
+	    margin-left: -85px;
+	    opacity: 0;
+	    padding: 10px;
+	    pointer-events: none;
+	    position: absolute;
+	    transition: all .5s ease-in;
+	    width: 150px;
+	    z-index: 999;
+	    font-weight: bold;
+	}
+
+	.numspotlink .menu-tooltip:after {
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+		border-top: 20px solid rgba(0,0,0,0.85);
+		bottom: -15px;
+		content: '';
+		height: 0;
+		left: 50%;
+		margin-left: -20px;
+		position: absolute;
+		width: 0;
+	}
 }
 
 @-moz-document url-prefix() { 
