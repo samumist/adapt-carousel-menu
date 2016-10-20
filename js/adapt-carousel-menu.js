@@ -82,11 +82,12 @@ define([
 
             $('.nth-child-1' ).addClass('active');
 
-            //CIRCLE NUMBERS SPOT LINKS FUNCTIONALITY
+            //CLICK ON CIRCLE NUMBERS SPOT LINKS FUNCTIONALITY
             var makezer0 = nthChild-1;
             var moveduration = makezer0 * $( window ).width() + add40px;
 
             $('a.numspotlink:eq(' + makezer0 + ')').click(function(){      
+                $('.numspotlink .menu-tooltip').css({'opacity':'0'});
                 $('.menu-item').animate({'left':'-' + $( window ).width()*makezer0 + 'px'});
                 $('.duration-bar').css('margin-left');
                 $('.duration-bar').animate({'margin-left':'' + moveduration + 'px'});
@@ -94,6 +95,7 @@ define([
                 $('a.menu-item-control-right').removeClass('menu-item-control-hide');
                 $('.menu-item' ).removeClass('active');
                 $('.nth-child-'+ nthChild ).addClass('active');
+                $('.nth-child-'+ nthChild + ' .numspotlink .menu-tooltip').css({'opacity':'1'});
             });
 
             //IF ONLY 1 OR 2 ITEMS
@@ -127,6 +129,7 @@ define([
                 $('.duration-bar').animate({'margin-left':'+=' + $( window ).width() /totalnthchild + 'px'}).stop(false,true);
                 $item.css('left');
                 $item.animate({'left':'-=' + $( window ).width() + 'px'});
+                $('.numspotlink .menu-tooltip').css({'opacity':'0'});
                 
                 count += 1;
                 
@@ -169,6 +172,7 @@ define([
                 $('.duration-bar').animate({'margin-left':'-=' + $( window ).width() /totalnthchild + 'px'}).stop(false,true);
                 $item.css('left');
                 $item.animate({'left':'+=' + $( window ).width() + 'px'});
+                $('.numspotlink .menu-tooltip').css({'opacity':'0'});
 
                 count -= 1;
 
