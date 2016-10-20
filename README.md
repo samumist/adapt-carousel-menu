@@ -2,6 +2,8 @@
 
 This is a Carousel type menu which is different from the box styled menu when you select it you can move left or right through your courses of click on the number of course in sequiential order at the bottom of the page. 
 
+<img src="https://raw.githubusercontent.com/mike-st/adapt-carousel-menu/99f2ea67595b029aa6971721cac21d37c4edaaae/screenshot-carousel.jpg" alt="IMAGE ALT TEXT HERE" width="768" height="432" border="10" />
+
 ### Attributes
 
 **_id** (string): This is a unique identifier that establishes relationships with other content structures. It is referenced in *articles.json* as the `_parentid` of an article model.   
