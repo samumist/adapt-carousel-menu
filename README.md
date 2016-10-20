@@ -2,7 +2,7 @@
 
 This is a Carousel type menu which is different from the box styled menu when you select it you can move left or right through your courses of click on the number of course in sequiential order at the bottom of the page. 
 
-<img src="https://raw.githubusercontent.com/mike-st/adapt-carousel-menu/screenshot-carousel.jpg" alt="IMAGE ALT TEXT HERE" width="768" height="432" border="10" />
+<img src="https://raw.githubusercontent.com/mike-st/adapt-carousel-menu/master/screenshot-carousel.jpg" alt="IMAGE ALT TEXT HERE" width="768" height="432" border="10" />
 
 ### Attributes
 
