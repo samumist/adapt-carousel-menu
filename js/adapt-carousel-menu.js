@@ -54,7 +54,7 @@ define([
             var minus150per = 150 - this.model.get("_nthChild") * 100;
             var add80px = this.model.get("_nthChild") * 80 - 80;
             var add40px = 32 - totalnthchild * 40;
-            var theintroptions = this.model.get('_introptions');
+	    var theintroptions = this.model.get("_carouselintro")._introptions; // INSERTED
             
             if (theintroptions === 'true') {
                 this.showIntromenu();
