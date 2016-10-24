@@ -231,10 +231,15 @@ define([
                     $('.duration-bar').animate({'margin-left':'' + resizewin2 - add40px3 + 'px'}).stop(false,true);
                 });
             });
-		
-	    $('.menu-reveal-items').click(function(){
+
+            $('.menu-reveal-items').click(function(){
                 $('.menu-header').animate({'margin-top':'-100%'}, 1000);
             });
+
+            if(window.location.href.indexOf("#") > -1) {
+               $('.menu-header').css({'z-index':'-1'});
+            }
+
 
             
         },
