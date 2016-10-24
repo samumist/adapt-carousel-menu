@@ -54,6 +54,11 @@ define([
             var minus150per = 150 - this.model.get("_nthChild") * 100;
             var add80px = this.model.get("_nthChild") * 80 - 80;
             var add40px = 32 - totalnthchild * 40;
+            var theintroptions = this.model.get('_introptions');
+            
+            if (theintroptions === 'true') {
+                this.showIntromenu();
+            };
 
             if (graphic && graphic.src && graphic.src.length > 0) {
                 this.$el.imageready(_.bind(function() {
@@ -234,6 +239,13 @@ define([
 
             
         },
+        
+        showIntromenu: function() {
+			$('.menu-reveal-items').click(function(){
+                $('.menu-header').show().animate({'margin-top':'-100%'}, 1000);
+            });
+
+		},
 
         onClickMenuItemButton: function(event) {
             if(event && event.preventDefault) event.preventDefault();
