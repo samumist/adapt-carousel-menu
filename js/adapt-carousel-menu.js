@@ -54,11 +54,6 @@ define([
             var minus150per = 150 - this.model.get("_nthChild") * 100;
             var add80px = this.model.get("_nthChild") * 80 - 80;
             var add40px = 32 - totalnthchild * 40;
-	    var theintroptions = this.model.get("_carouselintro")._introptions; // INSERTED
-            
-            if (theintroptions === 'true') {
-                this.showIntromenu();
-            };
 
             if (graphic && graphic.src && graphic.src.length > 0) {
                 this.$el.imageready(_.bind(function() {
@@ -236,16 +231,13 @@ define([
                     $('.duration-bar').animate({'margin-left':'' + resizewin2 - add40px3 + 'px'}).stop(false,true);
                 });
             });
+		
+	    $('.menu-reveal-items').click(function(){
+                $('.menu-header').animate({'margin-top':'-100%'}, 1000);
+            });
 
             
         },
-        
-        showIntromenu: function() {
-			$('.menu-reveal-items').click(function(){
-                $('.menu-header').show().animate({'margin-top':'-100%'}, 1000);
-            });
-
-		},
 
         onClickMenuItemButton: function(event) {
             if(event && event.preventDefault) event.preventDefault();
