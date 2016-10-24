@@ -35,14 +35,6 @@
       "inputType": "Text",
       "validators": [],
       "translatable": true
-    },
-    "_introptions": {
-      "type":"boolean",
-      "required":true,
-      "title": "Enabled Start Menu",
-      "inputType": { "type": "Boolean", "options": [false, true]},
-      "validators": [],
-      "help": "Have a intro menu with Module title before viewing chapters in the module"
     }
   },
   "properties": {
@@ -57,7 +49,24 @@
           "type":"object"
         },
         "contentobject": {
-          "type":"object"
+          "type":"object",
+          "properties":{
+            "_carouselintro": {
+              "type":"object",
+              "required":true,
+              "legend": "Turn Carousel Menu Intro on or off",
+              "properties":{
+                "_introptions": {
+                  "type":"boolean",
+                  "required":true,
+                  "title": "Enabled Start Menu",
+                  "inputType": { "type": "Boolean", "options": [false, true]},
+                  "validators": [],
+                  "help": "Have a intro menu with Module title before viewing chapters in the module"
+                }
+              }
+            }
+          }
         },
         "article": {
           "type":"object"
