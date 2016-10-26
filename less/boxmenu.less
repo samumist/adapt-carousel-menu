@@ -6,24 +6,30 @@ html {overflow-y: hidden;}
 	margin-top: -60px;
 }
 
-.menu-title, .menu-body{
+.menu-title{
 	color: @inverted-foreground-color;
 	margin-bottom:@menu-title-padding-bottom;
+	font-weight:bold !important;
 }
 
 .menu-header {
     background-color: @primary-color;
     display: block;
     position: fixed;
-    z-index: 999;
-    margin-top: -4px;
+    z-index: 502;
+    top: -100px;
     width: 100%;
     height: 100%;
+    opacity: 0.98;
 }
+
+.menu-header-inner{padding-top: 20% !important;}
 
 .menu-body {
 		display: block;
 		color: @white !important;
+		margin-bottom:@menu-title-padding-bottom;
+		font-size: 120%;
 }
 
 .menu-item-control {
@@ -42,7 +48,7 @@ html {overflow-y: hidden;}
 	-moz-transition: background-color .25s ease-in, color .25s ease-in, border-color .25s ease-in;
 	-ms-transition: background-color .25s ease-in, color .25s ease-in, border-color .25s ease-in;
 	transition: background-color .25s ease-in, color .25s ease-in, border-color .25s ease-in;
-	z-index: 500;
+	z-index: 510;
 }
 .menu-item-control:hover {
 	background-color: rgba(255,255,255,0.9);
@@ -88,6 +94,16 @@ html {overflow-y: hidden;}
 		display: inline-block;
 		position: relative;
 		width: 100%;
+	}
+
+	.menu-container-inner:after {
+	    position: fixed;
+	    background-color: rgba(255,255,255,0.9);
+	    height: 100px;
+	    width: 100%;
+	    display: block;
+	    bottom: 0px;
+	    z-index: 100;
 	}
 
 	.menu-item {
@@ -153,6 +169,7 @@ html {overflow-y: hidden;}
 	    padding: 0px !important;
 	    background : none !important;
 	    background-color: transparent !important;
+	    padding-left: 40px !important;
 	}
 	.menu-item-title-inner.h3, .menu-item-body-inner{
 		color: @black !important;
@@ -248,25 +265,39 @@ html {overflow-y: hidden;}
 		position: fixed;
 	    width: 100%;
 	    height: 50px;
+	    padding-top: 40px;
 	    vertical-align: middle;
 	    text-align: center;
 	    bottom: 0px;
 	    background: transparent;
-    	z-index: 900;
+    	z-index: 999;
 	}
 
-	.duration-bar .menu-item-inner{
+	.duration-bar-home {
+		position: fixed;
+	    width: 80px;
+	    height: 50px;
+	    padding-top: 40px;
+	    vertical-align: middle;
+	    text-align: center;
+	    bottom: 0px;
+	    background: transparent;
+    	z-index: 999;
+    	left: -10px;
+	}
+
+	.duration-bar .menu-item-inner, .duration-bar-home .menu-item-inner{
 		position: absolute !important;
 	    width: 100%;
 	    display: inline-block;
 	    text-align: center;
 	}
-	.duration-bar .page-level-progress-menu-item{
+	.duration-bar .page-level-progress-menu-item {
 		position: relative !important;
 		width: 60px !important;
 		height: 60px !important;
 	}
-	.duration-bar .page-level-progress-menu-item-indicator{
+	.duration-bar .page-level-progress-menu-item-indicator {
 		border-radius: 60px !important;
 		width: 60px !important;
 		height: 60px !important;
@@ -278,7 +309,7 @@ html {overflow-y: hidden;}
 	    -ms-transform: rotate(-90deg);
 	    transform: rotate(-90deg);
 	}
-	.duration-bar .numberspot{
+	.duration-bar .numberspot, .duration-bar-home .homespot{
 		border-radius: 44px;
 		height: 44px;
 		width: 44px;
@@ -295,17 +326,31 @@ html {overflow-y: hidden;}
 		z-index: 10;
 		border: solid 2px @white;
 	}
+	.duration-bar-home .homespot{border: solid 7px rgba(0,0,0,0.2) !important; top: -6px;}
 	.active .duration-bar .numberspot{
 		background-color: #8b8b8b;
 	    -webkit-transition: background-color 0.5s, -webkit-transform 0.5s;
 		transition: background-color 0.5s, transform 0.5s;
 	}
 
-	a.numspotlink {color: @white;}
-	a.numspotlink:hover {color: rgba(50,50,50,0.85);}
+	a.numspotlink, a.numspothome {color: @white;}
+	a.numspotlink:hover, a.numspothome:hover {color: rgba(50,50,50,0.85);}
+	.duration-bar-home .homespot:before {
+		content: "\e616";
+		font-family: 'vanilla' !important;
+		speak: none;
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-transform: none;
+		line-height: 1;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
 
 	.duration-bar .page-level-progress-menu-item-indicator-bar{
 		border-radius: 0px !important;
+		background-color: @black;
 		height: 60px !important;
 	}
 
@@ -320,7 +365,7 @@ html {overflow-y: hidden;}
 	    display: block;
 	    left: 5px;
 	    line-height: 25px;
-	    margin-left: -85px;
+	    margin-left: -45px;
 	    opacity: 0;
 	    padding: 10px;
 	    pointer-events: none;
@@ -335,6 +380,44 @@ html {overflow-y: hidden;}
 	}
 
 	.numspotlink .menu-tooltip:after {
+		border-left: 20px solid transparent;
+		border-right: 20px solid transparent;
+		border-top: 20px solid @black;
+		bottom: -15px;
+		content: '';
+		height: 0;
+		left: 50%;
+		margin-left: -20px;
+		position: absolute;
+		width: 0;
+	}
+
+	.numspothome .menu-tooltip{
+	    background-color: @black;
+	    border-radius: 5px;
+	    bottom: 50px;
+	    -webkit-box-shadow: 0 3px 10px 0 rgba(0,0,0,0.5);
+	    -moz-box-shadow: 0 3px 10px 0 rgba(0,0,0,0.5);
+	    box-shadow: 0 3px 10px 0 rgba(0,0,0,0.5);
+	    color: @white;
+	    display: block;
+	    left: 5px;
+	    line-height: 25px;
+	    margin-left: -40px;
+	    opacity: 0;
+	    padding: 10px;
+	    pointer-events: none;
+	    position: absolute;
+	    -webkit-animation-duration: 1s;
+  		animation-duration: 1s;
+        -webkit-animation-fill-mode: both;
+  		animation-fill-mode: both;
+	    width: 150px;
+	    z-index: 999;
+	    font-weight: bold;
+	}
+
+	.numspothome .menu-tooltip:after {
 		border-left: 20px solid transparent;
 		border-right: 20px solid transparent;
 		border-top: 20px solid @black;
