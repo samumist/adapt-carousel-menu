@@ -63,6 +63,7 @@ define([
             var totalnthchild = $('.duration-bar').length;
             
             var minus150per = 150 - this.model.get("_nthChild") * 100;
+            var paddingcal = 100 * this.model.get("_nthChild") - 100;
             var add80px = this.model.get("_nthChild") * 80 - 80;
             var add40px = 32 - totalnthchild * 40;
 
@@ -76,8 +77,13 @@ define([
 
             $('.menu-container').css({'width' : '' + nthChild + '00%','display' : 'inline-block','position' : 'relative'});
             $('.nth-child-'+ nthChild ).css({'background' : 'url('+ graphic.src +')'}).attr('name', 'nth-child-' + nthChild);
-            $('.nth-child-'+ nthChild + ' .menu-item-inner').css({'left' : '' + minus150per + '%', 'margin-left' : '' + add80px + 'px'});
             $('.menu-item.nth-child-'+ nthChild + ' .numberspot').text('' + nthChild );
+
+            if ($(window).width() <= 1024) {
+                $('.nth-child-'+ nthChild + ' .menu-item-inner').css({'left' : '' + minus150per + '%', 'margin-left' : '' + add80px + 'px', 'padding-left': '' + paddingcal + '%' });
+            }else{
+                $('.nth-child-'+ nthChild + ' .menu-item-inner').css({'left' : '' + minus150per + '%', 'margin-left' : '' + add80px + 'px', 'padding-left': '40px' });
+            }
 
             //REMOVE HTML NO SCROLL ON BUTTON CLICK
             $('.menu-item .menu-item-button button').click(function(){
@@ -263,6 +269,12 @@ define([
                 $('.duration-bar').css({'margin-left':'' + calwin40px + 'px'});
                 $('.duration-bar-home').css({'margin-left': '' + totaldurhome2 + 'px'});
 
+                if ($(window).width() <= 1024) {
+                    $('.nth-child-'+ nthChild + ' .menu-item-inner').css({'left' : '' + minus150per + '%', 'margin-left' : '' + add80px + 'px', 'padding-left': '' + paddingcal + '%' });
+                }else{
+                    $('.nth-child-'+ nthChild + ' .menu-item-inner').css({'left' : '' + minus150per + '%', 'margin-left' : '' + add80px + 'px', 'padding-left': '40px' });
+                }
+
                 $('a.numspotlink:eq(' + makezer0 + ')').click(function(){      
                     var makezer0b = nthChild-1;
                     var resizewin2 = makezer0b * $( window ).width();
@@ -273,7 +285,6 @@ define([
                 });
             });
 
-            
         },
 
         onClickMenuItemButton: function(event) {
