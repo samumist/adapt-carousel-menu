@@ -23,7 +23,7 @@ html {overflow-y: hidden;}
     opacity: 0.98;
 }
 
-.menu-header-inner{padding-top: 20% !important;}
+.menu-header-inner{margin-top: 20% !important;}
 
 .menu-body {
 		display: block;
@@ -163,14 +163,6 @@ html {overflow-y: hidden;}
 		border: none;
 	}
 
-	.menu-item-inner {
-		position:relative;
-		max-width: none !important;
-	    padding: 0px !important;
-	    background : none !important;
-	    background-color: transparent !important;
-	    padding-left: 40px !important;
-	}
 	.menu-item-title-inner.h3, .menu-item-body-inner{
 		color: @black !important;
 		font-weight: bold;
@@ -286,12 +278,33 @@ html {overflow-y: hidden;}
     	left: -10px;
 	}
 
-	.duration-bar .menu-item-inner, .duration-bar-home .menu-item-inner{
+	.duration-bar .menu-item-inner{
 		position: absolute !important;
 	    width: 100%;
 	    display: inline-block;
 	    text-align: center;
+	    max-width: none !important;
+    	padding-top: 0px !important;
+    	padding-bottom: 0px !important;
+    	padding-right: 0px !important;
+	    background : none !important;
+	    background-color: transparent !important;
 	}
+
+	.duration-bar-home .menu-item-inner{
+		position: absolute !important;
+	    width: 100%;
+	    display: inline-block;
+	    text-align: center;
+	    max-width: none !important;
+    	padding-top: 0px !important;
+    	padding-bottom: 0px !important;
+    	padding-right: 0px !important;
+    	padding-left: 40px !important;
+	    background : none !important;
+	    background-color: transparent !important;
+	}
+
 	.duration-bar .page-level-progress-menu-item {
 		position: relative !important;
 		width: 60px !important;
@@ -450,7 +463,12 @@ html {overflow-y: hidden;}
 }
 
 @media all and (max-width:1024px) {
-	.duration-bar {display:none;}
+	.duration-bar, .menu-tooltip {display:none !important;}
+	.active .duration-bar {display:block !important;}
+	.active .duration-bar .menu-item-inner{position: fixed !important;}
+	.active .duration-bar .menu-item-inner {margin-left: 0px !important;}
+	.menu .duration-bar-home .menu-item-inner {left: 42.5% !important; margin-left: 0px !important; padding-left: 0px !important; position: fixed !important;}
+	.menu-item-control {top:inherit; bottom: 8px; z-index: 1000;}
 }
 
 @media all and (max-width:760px) {
@@ -501,4 +519,5 @@ html {overflow-y: hidden;}
 	    right: 0;
 	    bottom: 0;
 	}
+	.menu .duration-bar-home .menu-item-inner {left: 37% !important;}
 }
