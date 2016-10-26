@@ -2,7 +2,7 @@
 	<div class='menu-container-inner box-menu-inner clearfix'>
 		<a href="#" class="menu-item-control menu-item-control-left icon-controls-left icon menu-item-control-hide" role="button" aria-label=""></a>
 		<a href="#" class="menu-item-control menu-item-control-right icon-controls-right icon" role="button" aria-label=""></a>
-		<div class="menu-header" style="display: none;">
+		<div class="menu-header" style="background: url('adapt/css/assets/backgroundA.jpg'); webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; background-position: center center; background-repeat: no-repeat;">
 			<div class="menu-header-inner">
 				{{#if displayTitle}}
 				<div class="menu-title">
@@ -18,9 +18,14 @@
 					</div>
 				</div>
 				{{/if}}
-				<a href="#" class="menu-reveal-items button" role="button">Start</a>
 			</div>
 		</div>
+
 	</div>
 	<div class="aria-label relative a11y-ignore-focus prevent-default" tabindex="0" role="region">{{_globals._menu._boxmenu.menuEnd}}</div>
+	<div class="duration-bar-home">
+	    <div class="menu-item-inner" style="left: 50%; margin-left: 0px;">
+	        <a href="#" class="numspothome" role="button" aria-label=""><div class="menu-tooltip">Home</div><div class="homespot"></div></a>
+		</div>
+	</div>
 </div>
