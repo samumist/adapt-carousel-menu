@@ -11,30 +11,47 @@ define([
             //SHOW INTRO HOME PAGE OR NOT
             //ARROWS TO TRIIGER HOME BUTTON
             $('.menu-home-control-left').click(function(){
-                $( '.active.nth-child-1' ).animate({'background-position-x': '0px','background-position-y': '60px'});
+                $( '.active.nth-child-1' ).stop().animate({'left':'0px','background-position-x': ''+ whatwinwidth +'px','background-position-y': '60px'});
                 $('.nth-child-1 .numspotlink .menu-tooltip').css({'opacity':'0','-webkit-animation-name': '','animation-name': ''});
                 $('.duration-bar-home .numspothome .menu-tooltip').css({'opacity':'1','-webkit-animation-name': 'fadeInUp','animation-name': 'fadeInUp'});
                 $('.menu-item' ).removeClass('active');
-                $('.menu-header').css('left');               
+                $('.menu-header').animate({'top':'-100px','left':'0px'});
+                $('.duration-bar-home .homespot').removeClass('isDown');
+                $('.menu-item-control-right').addClass('menu-item-control-hide');
+                $('.menu-home-control-right').removeClass('menu-item-control-hide');
+                $('.menu-home-control-left').addClass('menu-item-control-hide'); 
             });
-            /*$('.menu-home-control-right').click(function(){
-                $( '.nth-child-1 .numspotlink' ).trigger( 'click' ); 
-            });*/
+            $('.menu-home-control-right').click(function(){
+                $('.nth-child-1' ).stop().animate({'left':'0px','background-position-x': '0px','background-position-y': '60px'});
+                $('.menu-header').stop().animate({'top':'-100px','left':'-100%'});
+                $('.duration-bar-home .numspothome .menu-tooltip').css({'opacity':'0','-webkit-animation-name': '','animation-name': ''});
+                $('.nth-child-1' ).addClass('active');
+                $('.menu-item-control-right').removeClass('menu-item-control-hide');
+                $('.menu-home-control-right').addClass('menu-item-control-hide');
+                $('.menu-home-control-left').removeClass('menu-item-control-hide');
+                $('.duration-bar-home .homespot').addClass('isDown');  
+            });
 
             $('.homespot').click( function(){
                 if ( $(this).hasClass('isDown') ) {
                     $( '.nth-child-1 .numspotlink' ).trigger( 'click' );
-                    $( '.active.nth-child-1' ).animate({'background-position-x': ''+ whatwinwidth +'px','background-position-y': '60px'});
+                    $( '.active.nth-child-1' ).stop().animate({'left':'0px','background-position-x': ''+ whatwinwidth +'px','background-position-y': '60px'});
                     $('.nth-child-1 .numspotlink .menu-tooltip').css({'opacity':'0','-webkit-animation-name': '','animation-name': ''});
                     $('.duration-bar-home .numspothome .menu-tooltip').css({'opacity':'1','-webkit-animation-name': 'fadeInUp','animation-name': 'fadeInUp'});
                     $('.menu-item' ).removeClass('active');
-                    $('.menu-header').animate({'top':'-100px','left':'0px'});              
+                    $('.menu-header').stop().animate({'top':'-100px','left':'0px'});
+                    $('.menu-item-control-right').addClass('menu-item-control-hide');
+                    $('.menu-home-control-right').removeClass('menu-item-control-hide');
+                    $('.menu-home-control-left').addClass('menu-item-control-hide');             
                 } else {
-                    $( '.menu-item.nth-child-1').animate({'background-position-x': '0px','background-position-y': '60px'});
-                    $('.menu-header').animate({'top':'-100px','left':'-100%'});
+                    $('.nth-child-1' ).stop().animate({'left':'0px','background-position-x': '0px','background-position-y': '60px'});
+                    $('.menu-header').stop().animate({'top':'-100px','left':'-100%'});
                     $('.duration-bar-home .numspothome .menu-tooltip').css({'opacity':'0','-webkit-animation-name': '','animation-name': ''});
                     $('.nth-child-1 .numspotlink .menu-tooltip').css({'opacity':'1','-webkit-animation-name': 'fadeInUp','animation-name': 'fadeInUp'});
                     $('.nth-child-1' ).addClass('active');
+                    $('.menu-item-control-right').removeClass('menu-item-control-hide');
+                    $('.menu-home-control-right').addClass('menu-item-control-hide');
+                    $('.menu-home-control-left').removeClass('menu-item-control-hide'); 
                 }
                 $(this).toggleClass('isDown');
                 return false;
@@ -124,12 +141,8 @@ define([
             var homecal = $( window ).width() / 2 - 40;
             var durhome = totalnthchild / 2 * 80;
             var totaldurhome = homecal - durhome - 40;
+            $('.menu-home-control-right').removeClass('menu-item-control-hide');
             $('.duration-bar-home').css({'margin-left': '' + totaldurhome + 'px'});
-
-            $('.menu-item-control').click( function(){
-                $('.menu-header').stop().animate({'top':'-100px','left':'-100%'});
-                $('.duration-bar-home .homespot').addClass('isDown');
-            });
 
             $('.duration-bar-home .homespot').hover(function(){
                 $('.numspotlink .menu-tooltip').css({'opacity':'0','-webkit-animation-name': '','animation-name': ''});
@@ -197,6 +210,7 @@ define([
                 $item.css('left');
                 $item.animate({'left':'-=' + $( window ).width() + 'px'});
                 $('.numspotlink .menu-tooltip').css({'opacity':'0','-webkit-animation-name': '','animation-name': ''});
+                $('.duration-bar-home .homespot').addClass('isDown');
 
                 count += 1;
                 
@@ -243,6 +257,8 @@ define([
                 $item.animate({'left':'+=' + $( window ).width() + 'px'});
                 $('.numspotlink .menu-tooltip').css({'opacity':'0','-webkit-animation-name': '','animation-name': ''});
                 $('.nth-child-1' ).css({'background-position-x': '0px','background-position-y': '60px'});
+                $('.menu-header').stop().animate({'top':'-100px','left':'-100%'});
+                $('.duration-bar-home .homespot').addClass('isDown');
 
                 count -= 1;
 
