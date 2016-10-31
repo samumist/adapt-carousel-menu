@@ -118,21 +118,6 @@ define([
             $('.nth-child-'+ nthChild ).css({'background-image' : 'url('+ graphic.src +')'}).attr('name', 'nth-child-' + nthChild);
             $('.menu-item.nth-child-'+ nthChild + ' .numberspot').text('' + nthChild );
 
-            if ($(window).width() <= 1024) {
-                $('.nth-child-'+ nthChild + ' .menu-item-inner').css({'left' : '' + minus150per + '%', 'margin-left' : '' + add80px + 'px', 'padding-left': '' + paddingcal + '%' });
-            }else{
-                $('.nth-child-'+ nthChild + ' .menu-item-inner').css({'left' : '' + minus150per + '%', 'margin-left' : '' + add80px + 'px', 'padding-left': '40px' });
-            }
-
-            //REMOVE HTML NO SCROLL ON BUTTON CLICK
-            $('.menu-item .menu-item-button button').click(function(){
-                $('html').css({'overflow-y' : 'scroll'});
-            });
-
-            $('.locked .menu-item-button button').click(function(){
-                $('html').css({'overflow-y' : 'hidden'});
-            }); 
-
             //ANIMATE SLIDER LEFT OR RIGHT
             var count = 0;
             var $item = $('.nth-child-'+ nthChild );
@@ -178,11 +163,16 @@ define([
             });
 
             //IF ONLY 1 OR 2 ITEMS
-            if ($('.duration-bar').length <= 2) {
-                $('.menu-item-control').hide();
-            } else {
-                $('.menu-item-control').show();
-            } 
+            if ($(window).width() <= 1024) {
+                $('.nth-child-'+ nthChild + ' .menu-item-inner').css({'left' : '' + minus150per + '%', 'margin-left' : '' + add80px + 'px', 'padding-left': '' + paddingcal + '%' });
+            }else{
+                $('.nth-child-'+ nthChild + ' .menu-item-inner').css({'left' : '' + minus150per + '%', 'margin-left' : '' + add80px + 'px', 'padding-left': '40px' });
+                if ($('.duration-bar').length <= 2) {
+                    $('.menu-item-control').hide();
+                } else {
+                    $('.menu-item-control').show();
+                } 
+            }
             
             //Hide LEFT arrow if number 1 is clicked
             $('a.numspotlink:eq(0)').click(function(){    
@@ -338,10 +328,6 @@ define([
             if(event && event.preventDefault) event.preventDefault();
             if(this.model.get('_isLocked')) return;
             Backbone.history.navigate('#/id/' + this.model.get('_id'), {trigger: true});
-
-            $('.navigation-back-button').click(function(){
-                $('html').css({'overflow-y' : 'hidden'});
-            });
 
         }
 
