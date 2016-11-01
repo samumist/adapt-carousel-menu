@@ -38,7 +38,8 @@ Several menu-related elements are assigned a label using the [aria-label](https:
 
 ## Limitations
 ONLY ALLOWS 13 Pages right now! To be fixed soon!
-*Firefox has issues with left and right arrows so I turned them off and only sequiential number circles will display in the Firefox browser.
+
+*Firefox has issues with left and right arrows so I turned them off in desktop view only, the sequiential number circles will display in the Firefox browser instead. Please note arrows work in Firefox mobile views still.
 
 ----------------------------
 **Version number:**  2.0.5   
