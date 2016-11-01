@@ -486,7 +486,7 @@
 }
 
 @-moz-document url-prefix() { 
-  .menu-item-control {display:none !important;}
+  .menu-item-control {visibility: hidden;}
 }
 
 @media all and (max-width:1024px) {
@@ -499,6 +499,9 @@
 	.menu-header-inner {margin-top: 100px !important;}
 	.menu-item-body, .isDown {display: none !important;}
 	.menu-item-control {top:inherit; bottom: 8px; z-index: 1000;}
+	@-moz-document url-prefix() { 
+	  .menu-item-control {visibility: visible;}
+	}
 }
 @media all and (max-width:768px) {
 	.menu-header-inner {margin-top: 200px !important;}
