@@ -122,6 +122,11 @@ define([
                 this.setReadyStatus();
             }
 
+            //TIMER IF NEEDED
+            if ($('#timer').is(':contains("02:00:00")')) {
+                $('.menu .menu-item').removeClass('locked');
+            }
+
             $('.menu-container').css({'width' : '' + nthChild + '00%','display' : 'inline-block','position' : 'relative'});
             $('.nth-child-'+ nthChild ).css({'background-image' : 'url('+ graphic.src +')'}).attr('name', 'nth-child-' + nthChild);
             $('.menu-item.nth-child-'+ nthChild + ' .numberspot').text('' + nthChild );
@@ -196,11 +201,29 @@ define([
                 $('a.menu-item-control-right').addClass('menu-item-control-hide');
             });
 
-
+            //IF LESS THAN OR EQUAL TO 13 OR MORE
             if (totalnthchild <= 13) {
                 $('.duration-bar').css({'margin-left' : add40px + 'px'});
-            } else {
-                alert('This Menu Only Allows 13 Pages! Please use the BoxMenu Otherwise...');
+                $('.carouselpushLeft').css({'display' : 'none'});
+                $('.carouselpushRight').css({'display' : 'none'});
+            } else if (totalnthchild === 14 || totalnthchild === 15) {
+                $('.carouselpushLeft').click(function(){
+                    $('.duration-bar').animate({'margin-left':'+=' + 80 / totalnthchild +'px'}).stop(false,true);
+                });
+                $('.carouselpushRight').click(function(){
+                    $('.duration-bar').animate({'margin-left':'-=' + 80 / totalnthchild +'px'}).stop(false,true);
+                });
+                $('.duration-bar').css({'margin-left' : add40px + 'px'});
+            }else {
+                $('.carouselpushLeft').click(function(){
+                    $('.duration-bar').animate({'margin-left':'+=' + 80 / totalnthchild +'px'}).stop(false,true);
+                });
+                $('.carouselpushRight').click(function(){
+                    $('.duration-bar').animate({'margin-left':'-=' + 80 / totalnthchild +'px'}).stop(false,true);
+                });
+                $('.duration-bar').css({'margin-left' : add40px + 'px'});
+                $('.menu .duration-bar-home').css({'margin-left':'-90px','left':'50%','bottom':'inherit','top':'-10px'});
+                $('.duration-bar-home .numspothome .menu-tooltip').css({'display':'none'});
             }
 
             //PRESS RIGHT BUTTON
@@ -335,6 +358,16 @@ define([
                 $('.duration-bar').css({'margin-left':'' + calwin40px + 'px'});
                 $('.duration-bar-home').css({'margin-left': '' + totaldurhome2 + 'px'});
                 $('.nth-child-1' ).css({'background-position-x': '0px','background-position-y': '60px'});
+
+                //IF LESS THAN OR EQUAL TO 13 OR MORE
+                if (totalnthchild <= 13) {
+                    $('.carouselpushLeft').css({'display' : 'none'});
+                    $('.carouselpushRight').css({'display' : 'none'});
+                } else if (totalnthchild === 14 || totalnthchild === 15) {
+                    //do nothing
+                } else {
+                    $('.menu .duration-bar-home').css({'margin-left':'-90px','left':'50%','bottom':'inherit','top':'-10px'});
+                }
 
                 if ($(window).width() <= 1024) {
                     $('.nth-child-'+ nthChild + ' .menu-item-inner').css({'left' : '' + minus150per + '%', 'margin-left' : '' + add80px + 'px', 'padding-left': '' + paddingcal + '%' });
