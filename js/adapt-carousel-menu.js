@@ -122,11 +122,6 @@ define([
                 this.setReadyStatus();
             }
 
-            //TIMER IF NEEDED
-            if ($('#timer').is(':contains("02:00:00")')) {
-                $('.menu .menu-item').removeClass('locked');
-            }
-
             $('.menu-container').css({'width' : '' + nthChild + '00%','display' : 'inline-block','position' : 'relative'});
             $('.nth-child-'+ nthChild ).css({'background-image' : 'url('+ graphic.src +')'}).attr('name', 'nth-child-' + nthChild);
             $('.menu-item.nth-child-'+ nthChild + ' .numberspot').text('' + nthChild );
