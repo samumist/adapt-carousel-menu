@@ -549,6 +549,17 @@
 		margin-left: -16px;
 	}
 }
+/* HIDES THE MENU ARROWS ADDS CLICK HERE */
+.menu-item-control {visibility: hidden;}
+.menu-item-button:after {
+    content: 'Click or tap View to start';
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: @black;
+    font-style: italic;
+    letter-spacing: 1px;
+}
 
 @-moz-document url-prefix() { 
   .menu-item-control {visibility: hidden;}
@@ -565,6 +576,7 @@
 	.menu-header-inner {margin-top: 100px !important;}
 	.menu-item-body, .isDown, .carouselpushLeft, .carouselpushRight {display: none !important;}
 	.menu-item-control {top:inherit; bottom: 8px; z-index: 1000;}
+	.menu-item-control {visibility: visible;}
 	@-moz-document url-prefix() { 
 	  .menu-item-control {visibility: visible;}
 	}
