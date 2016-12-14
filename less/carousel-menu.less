@@ -128,7 +128,7 @@
 	}
 
 	.menu-item-button {
-		padding: 0;
+		padding: 0 0 20px 0;
 		
 		button {
 			padding: @button-padding-top (@button-padding-right*2) @button-padding-bottom (@button-padding-left*2);
@@ -173,4 +173,12 @@
 			}
 		}
    	}
+}
+
+@media all and (max-width: @device-width-small) {
+  .menu {
+    .menu-box-info {
+      margin-top: 30%;
+    }
+  }
 }
