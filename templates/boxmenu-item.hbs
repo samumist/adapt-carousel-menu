@@ -1,15 +1,15 @@
 <div class="menu-box-info">
     <div class="menu-inner-info">
         <div class="menu-item-title">
-            <!-- <div class="menu-item-title-inner h3 accessible-text-block" role="heading" aria-level="2" tabindex="0">{{{displayTitle}}}</div> -->
+            <div class="menu-item-title-inner h3 accessible-text-block" role="heading" aria-level="2" tabindex="0">{{{displayTitle}}}</div>
         </div>
         <div class="menu-item-body">
-            <!-- <div class="menu-item-body-inner">{{{a11y_text body}}}</div> -->
+            <div class="menu-item-body-inner">{{{a11y_text body}}}</div>
         </div>
         <div class="menu-item-button">
-            <!-- <button aria-label="{{linkText}} {{#if _isVisited}}{{_globals._accessibility._ariaLabels.visited}}{{/if}}" class="{{#if _isVisited}}visited{{/if}} {{#if _isLocked}}disabled{{/if}} accessible-text-block" {{#if _isLocked}}disabled="disabled"{{/if}}>
+            <button aria-label="{{linkText}} {{#if _isVisited}}{{_globals._accessibility._ariaLabels.visited}}{{/if}}" class="{{#if _isVisited}}visited{{/if}} {{#if _isLocked}}disabled{{/if}} accessible-text-block" {{#if _isLocked}}disabled="disabled"{{/if}}>
                 {{{linkText}}}
-            </button> -->
+            </button>
         </div>
     </div>
 </div>
@@ -20,7 +20,7 @@
                 <!-- <img src="{{_graphic.src}}" alt="{{_graphic.alt}}" style="max-width: 100%; height: 100%;" /> -->
             {{/if}}
         </div>
-        <a href="#" class="numspotlink" role="button" aria-label="{{linkText}} {{#if _isVisited}}{{_globals._accessibility._ariaLabels.visited}}{{/if}}" class="{{#if _isVisited}}visited{{/if}} {{#if _isLocked}}disabled{{/if}} accessible-text-block" {{#if _isLocked}}disabled="disabled"{{/if}}><div class="menu-tooltip" role="heading" aria-level="2" tabindex="0">{{{displayTitle}}}</div><div class="numberspot" aria-level="2" tabindex="0"></div></a>
+        <a href="#" class="numspotlink" role="button" aria-label=""><div class="menu-tooltip" role="heading" aria-level="2" tabindex="0">{{{displayTitle}}}</div><div class="numberspot" aria-level="2" tabindex="0"></div></a>
         {{#if duration}}
             <span class="menu-item-duration accessible-text-block" style="z-index: -1; opacity: 0;" role="region" tabindex="0">{{#if _globals._menu._boxmenu.durationLabel}}{{{_globals._menu._boxmenu.durationLabel}}}{{/if}} {{{duration}}}</span>
         {{/if}}
