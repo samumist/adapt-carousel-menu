@@ -6,6 +6,11 @@
         <div class="menu-item-body">
             <div class="menu-item-body-inner" aria-level="2" tabindex="0">{{{compile_a11y_text body}}}</div>
         </div>
+        {{#if duration}}
+        <div class="menu-duration">
+            <span class="accessible-text-block" role="region" tabindex="0">{{#if _globals._menu._boxmenu.durationLabel}}{{{_globals._menu._boxmenu.durationLabel}}}{{/if}} {{{duration}}}</span>
+        </div>
+        {{/if}}
         <div class="menu-item-button">
             <button aria-label="{{linkText}} {{#if _isVisited}}{{_globals._accessibility._ariaLabels.visited}}{{/if}}" class="{{#if _isVisited}}visited{{/if}} {{#if _isLocked}}disabled{{/if}} accessible-text-block" {{#if _isLocked}}disabled="disabled"{{/if}}>
                 {{{linkText}}}
@@ -21,8 +26,5 @@
             <!-- {{/if}} -->
         </div>
         <a href="#" class="numspotlink" role="button" aria-label=""><div class="menu-tooltip" role="heading" aria-level="2" tabindex="0">{{{compile displayTitle}}}</div><div class="numberspot" aria-level="2" tabindex="0"></div></a>
-        {{#if duration}}
-            <span class="menu-item-duration accessible-text-block" style="z-index: -1; opacity: 0;" role="region" tabindex="0">{{#if _globals._menu._boxmenu.durationLabel}}{{{_globals._menu._boxmenu.durationLabel}}}{{/if}} {{{duration}}}</span>
-        {{/if}}
     </div>
 </div>
