@@ -1,4 +1,15 @@
 <div class="menu-container" role="region" aria-label="{{_globals._menu._boxmenu.ariaRegion}}">
+
+<script>
+$(function () {
+    $(".skipme").bind("click", function () {
+       $(".tooltips6").remove();   
+    });
+
+});
+</script>
+<div class="tooltips6 animated fadeInDown" data-wow-duration="3s" aria-level="1" tabindex="0"><h3>Table of Contents:</h3>The Table of Contents displays all the course sections. These sections are represented by numbered circles at the bottom of the page. As you complete each section, the outer ring of the circle fills.<br /><br /><span class="skipme">CLOSE</span></div>
+
 	<div class='menu-container-inner box-menu-inner clearfix'>
 		<a href="#" class="menu-item-control menu-item-control-left icon-controls-left icon menu-item-control-hide" role="button" aria-label=""></a>
 		<a href="#" class="menu-item-control menu-item-control-right icon-controls-right icon menu-item-control-hide" role="button" aria-label=""></a>
