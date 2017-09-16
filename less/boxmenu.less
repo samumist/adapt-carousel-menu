@@ -561,6 +561,23 @@
     letter-spacing: 1px;
 }
 
+.skipme {
+    color: #ffffff;
+    text-align: right;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: 49%;
+    display: inline-block;
+    position: relative;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    font-weight: bold;
+    float: right;
+}
+.skipme:hover {
+    text-decoration: underline;
+}
+
 @-moz-document url-prefix() { 
   .menu-item-control {visibility: hidden;}
 }
@@ -636,4 +653,77 @@
 	}
 	.menu-body {display: none !important;}
 	.menu-header-inner {margin-top: 200px !important;}
+}
+
+.tooltips6 {
+  font-family: 'BrownLight',Helvetica,Arial,sans-serif !important;
+  font-size: 15px !important;
+  letter-spacing: 0px;
+  border: solid 2px @secondary-color;
+  moz-box-shadow: 0 5px 8px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 0 5px 8px rgba(0,0,0,0.5);
+  box-shadow: 0 5px 8px rgba(0,0,0,0.5);
+} 
+
+
+.tooltips6 h3{
+  font-family: 'open_sans_Bold',Helvetica,Arial,sans-serif !important;
+  font-size: 100%;
+  letter-spacing: 0px;
+}
+
+.tooltips6 {
+  position: fixed;
+  width:350px;
+  color: @white;
+  background: @secondary-color;
+  height: auto;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 0px;
+  bottom: 100px;
+  z-index: 600;
+  right: 0px;
+  padding: 20px;
+  text-align:justify;
+  border: 1px solid @white;
+  left: 169px;
+
+}
+.tooltips6:after {
+   content: '';
+   position: absolute;
+   bottom: -10px !important;
+   left: 78% !important;
+   margin-left: -8px;
+   width: 0;
+   height: 0;
+   border-top: 10px solid #3B7C8E;
+   border-right: 10px solid transparent;
+   border-left: 10px solid transparent;
+}
+
+*::-ms-backdrop, .tooltips6 { z-index: 511; } 
+.tooltips6 { z-index: 500\9 ; }
+_:-ms-lang(x), _:-webkit-full-screen, .tooltips6 { z-index: 511; }
+
+
+@media all and (max-width:1366px){
+    .tooltips6 {left: 121px;}
+}
+
+@media all and (max-width:1280px){
+    .tooltips6 {left: 158px;}
+}
+
+@media all and (max-width:1024px){
+    .tooltips6 {left: 208px;}
+}
+
+@media all and (max-width:768px){
+    .tooltips6 {left: 86px;}
+}
+
+@media all and (max-width:640px){
+    .tooltips6 {left: 19px;}
 }
