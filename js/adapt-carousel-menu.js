@@ -148,6 +148,7 @@ define([
             //CLICK ON CIRCLE NUMBERS SPOT LINKS FUNCTIONALITY
             var makezer0 = nthChild-1;
             var moveduration = makezer0 * $( window ).width() + add40px;
+            var numtotalamount = $('.menu-item').length;
 
 
             $('a.numspotlink:eq(' + makezer0 + ')').hover(function(){
@@ -172,6 +173,9 @@ define([
                 $('.duration-bar-home .numspotlink .menu-tooltip').css({'opacity':'1','-webkit-animation-name': 'fadeInUp','animation-name': 'fadeInUp'});
                 $('.menu-header').stop().animate({'top':'-100px','left':'-100%'});
                 $('.duration-bar-home .homespot').addClass('isDown');
+                //Below addes page number in for the menu
+                $('.navpagenum').text( 'Page ' + nthChild + ' of ' + numtotalamount );
+                $('.arianavpgnum').text( 'Page ' + nthChild + ' of ' + numtotalamount ).attr('role','region').attr('tabindex','0').addClass('aria-label');
             });
 
             if ($(window).width() <= 1024) {
