@@ -19,7 +19,11 @@ define([
                 $('.duration-bar-home .homespot').removeClass('isDown');
                 $('.menu-item-control-right').addClass('menu-item-control-hide');
                 $('.menu-home-control-right').removeClass('menu-item-control-hide');
-                $('.menu-home-control-left').addClass('menu-item-control-hide'); 
+                $('.menu-home-control-left').addClass('menu-item-control-hide');
+                
+                //Below addes page number in for the menu
+                $('.navpagenum').text( 'Page ' + 1 + ' of ' + nthChild );
+                $('.arianavpgnum').text( 'Page ' + 1 + ' of ' + nthChild ).attr('role','region').attr('tabindex','0').addClass('aria-label');
             });
             $('.menu-home-control-right').click(function(){
                 $('.nth-child-1' ).stop().animate({'left':'0px','background-position-x': '0px','background-position-y': '60px'});
@@ -30,6 +34,10 @@ define([
                 $('.menu-home-control-right').addClass('menu-item-control-hide');
                 $('.menu-home-control-left').removeClass('menu-item-control-hide');
                 $('.duration-bar-home .homespot').addClass('isDown'); 
+                
+                //Below addes page number in for the menu
+                $('.navpagenum').text( 'Page ' + 1 + ' of ' + nthChild );
+                $('.arianavpgnum').text( 'Page ' + 1 + ' of ' + nthChild ).attr('role','region').attr('tabindex','0').addClass('aria-label');
 
                 //IF ONLY 1 OR 2 ITEMS
                 if ($('.duration-bar').length == 1) {
@@ -246,6 +254,12 @@ define([
                 var seepgstring =  parseInt(seepg.replace(/px/g, ''), 10);
                 var seepgcal = seepgstring - seepgminus;
                 var seepgtotal = $( window ).width()-seepgminus*nthChild;
+                var calpagenum = 1 + count;
+
+                //Below addes page number in for the menu
+                $('.navpagenum').text( 'Page ' + calpagenum + ' of ' + nthChild );
+                $('.arianavpgnum').text( 'Page ' + calpagenum + ' of ' + nthChild ).attr('role','region').attr('tabindex','0').addClass('aria-label');
+                
                 if ((seepgcal + 'px' ==  seepgtotal + 'px')) {
                     $('.menu-item' ).removeClass('active');
                     $item.addClass('active');
@@ -305,6 +319,12 @@ define([
                 var seepgstring =  parseInt(seepg.replace(/px/g, ''), 10);
                 var seepgcal = seepgstring + seepgminus;
                 var seepgtotal = $( window ).width()-seepgminus*nthChild;
+                var calpagenum = 1 + count;
+
+                //Below addes page number in for the menu
+                $('.navpagenum').text( 'Page ' + calpagenum + ' of ' + nthChild );
+                $('.arianavpgnum').text( 'Page ' + calpagenum + ' of ' + nthChild ).attr('role','region').attr('tabindex','0').addClass('aria-label');
+                
                 if ((seepgcal + 'px' ==  seepgtotal + 'px')) {
                     $('.menu-item' ).removeClass('active');
                     $item.addClass('active');
