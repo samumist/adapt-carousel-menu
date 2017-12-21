@@ -37,7 +37,7 @@ Several menu-related elements are assigned a label using the [aria-label](https:
 <div float align=right><a href="#top">Back to Top</a></div>
 
 ## Limitations
-*Firefox has issues with left and right arrows so I turned them off in desktop view only, the sequiential number circles will display in the Firefox browser instead. Please note arrows work in Firefox mobile views still.
+<div style="color:#990000;"><strong>If browser is zoomed in or out it may break the carousel Menu. Fix by returning browser zoom to 100%</strong></div>
 
 ----------------------------
 **Version number:**  2.0.5   
