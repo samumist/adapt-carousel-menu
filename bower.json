@@ -1,7 +1,7 @@
 {
   "name": "adapt-carousel-menu",
   "version": "2.0.5",
-  "framework": "^2.0.0",
+  "framework": ">=2.0.9",
   "homepage": "https://github.com/mike-st/adapt-carousel-menu",
   "displayName": "Carousel Menu",
   "menu": "boxmenu",
