@@ -224,7 +224,6 @@ define([
             } else {
                 $('.carouselpushLeft').click(function(){
                     i--
-                    console.log(i);
                     $('.duration-bar').animate({'margin-left':'+=' + 80 / totalnthchild +'px'}).stop(false,true);
                     $('.duration-bar-home').animate({'margin-left':'+=' + 80 / totalnthchild +'px'}).stop(false,true);
                     if (halfwaypoint == i || halfwaypoint == i + 0.5 || halfwaypoint == -i || halfwaypoint == -i + 0.5) {
@@ -237,7 +236,6 @@ define([
                 });
                 $('.carouselpushRight').click(function(){
                     i++
-                    console.log(i);
                     $('.duration-bar').animate({'margin-left':'-=' + 80 / totalnthchild +'px'}).stop(false,true);
                     $('.duration-bar-home').animate({'margin-left':'-=' + 80 / totalnthchild +'px'}).stop(false,true);
                     if (halfwaypoint == i || halfwaypoint == i + 0.5 || halfwaypoint == -i || halfwaypoint == -i + 0.5) {
@@ -250,7 +248,6 @@ define([
                 });
                 $('a').click(function(){
                     i = 0;
-                    console.log(i);
                     $('.carouselpushRight').removeAttr("disabled").removeClass("disabled");
                     $('.carouselpushLeft').removeAttr("disabled").removeClass("disabled");
                 });
