@@ -190,7 +190,7 @@ define([
                 $('.arianavpgnum').text( 'Page ' + nthChild + ' of ' + numtotalamount ).attr('role','region').attr('tabindex','0').addClass('aria-label');
             });
 
-            if ($(window).width() <= 950) {
+            if ($(window).width() <= 1024) {
                 $('.nth-child-'+ nthChild + ' .menu-item-inner').css({'left' : '' + minus150per + '%', 'margin-left' : '' + add80px + 'px', 'padding-left': '' + paddingcal + '%' });
             }else{
                 $('.nth-child-'+ nthChild + ' .menu-item-inner').css({'left' : '' + minus150per + '%', 'margin-left' : '' + add80px + 'px', 'padding-left': '40px' })
@@ -408,7 +408,7 @@ define([
                     //do nothing
                 }
 
-                if ($(window).width() <= 950) {
+                if ($(window).width() <= 1024) {
                     $('.nth-child-'+ nthChild + ' .menu-item-inner').css({'left' : '' + minus150per + '%', 'margin-left' : '' + add80px + 'px', 'padding-left': '' + paddingcal + '%' });
                 }else{
                     $('.nth-child-'+ nthChild + ' .menu-item-inner').css({'left' : '' + minus150per + '%', 'margin-left' : '' + add80px + 'px', 'padding-left': '40px' });
