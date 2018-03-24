@@ -32,6 +32,11 @@ This is a Carousel type menu which is different from the box styled menu when yo
        
 <div float align=right><a href="#top">Back to Top</a></div>  
 
+### Adding a Custom Carousel Header Menu Image
+To add a custom carousel header menu image please use the following coding in the Custom CSS/Less Project settings or add an image in your theme called BackgroundA.jpg.
+
+<img src="https://raw.githubusercontent.com/mike-st/adapt-carousel-menu/master/carousel-custom-header-image.jpg" alt="IMAGE ALT TEXT HERE" width="768" height="389" border="10" />
+
 ### Accessibility
 Several menu-related elements are assigned a label using the [aria-label](https://github.com/adaptlearning/adapt_framework/wiki/Aria-Labels) attribute: **ariaRegion**, **menuItem**, and **menuEnd**. These labels are not visible elements. They are utilized by assistive technology such as screen readers. Should the label texts need to be customised, they can be found within the **globals** object in [*properties.schema*](https://github.com/mike-st/adapt-carousel-menu/blob/master/properties.schema).   
 <div float align=right><a href="#top">Back to Top</a></div>
