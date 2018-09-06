@@ -42,7 +42,7 @@ Several menu-related elements are assigned a label using the [aria-label](https:
 <div float align=right><a href="#top">Back to Top</a></div>
 
 ## Limitations
-<div style="color:#990000;"><strong>If browser is zoomed in or out it may break the carousel Menu. Fix by returning browser zoom to 100%</strong></div>
+None known
 
 ----------------------------
 **Version number:**  2.0.5   
