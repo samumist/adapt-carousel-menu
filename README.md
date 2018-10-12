@@ -42,7 +42,9 @@ Several menu-related elements are assigned a label using the [aria-label](https:
 <div float align=right><a href="#top">Back to Top</a></div>
 
 ## Limitations
-None known
+Unfortunately Submenu sections won't work with this menu system. For use with parent level only. If you wish to use submenu's try my other menu called ScrollingTile Menu...
+
+[ScrollingTile Menu](https://github.com/mike-st/adapt-tilesMenu)
 
 ----------------------------
 **Version number:**  2.0.5   
