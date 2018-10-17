@@ -35,10 +35,20 @@ This is a Carousel type menu which is different from the box styled menu when yo
 ### Adding a Custom Carousel Header Menu Image
 To add a custom carousel header menu image please use the following coding in the Custom CSS/Less Project settings or add an image in your theme called BackgroundA.jpg.
 
-<img src="https://raw.githubusercontent.com/mike-st/adapt-carousel-menu/master/carousel-custom-header-image.jpg" alt="IMAGE ALT TEXT HERE" width="768" height="389" border="10" />
+<img src="https://raw.githubusercontent.com/mike-st/adapt-carousel-menu/master/carousel-custom-header-image.jpg" alt="Custom Carousel Header Menu Image" width="768" height="389" border="10" />
+
+### Modifing the default text description for the Menu Item Buttons (eg. click or tap text)
+To add a custom default text description for the menu item buttons and remove the click or tap verbage. Please use the following coding in the Custom CSS/Less Project settings.
+
+.menu-item-button:after {
+    content: 'Cliquez ou tapez sur Voir pour commencer.';
+}
+
+<img src="https://raw.githubusercontent.com/mike-st/adapt-carousel-menu/master/carousel-custom-language-image.jpg" alt="Modifing the click or tap text for the menu item buttons" width="768" height="389" border="10" />
 
 ### Accessibility
 Several menu-related elements are assigned a label using the [aria-label](https://github.com/adaptlearning/adapt_framework/wiki/Aria-Labels) attribute: **ariaRegion**, **menuItem**, and **menuEnd**. These labels are not visible elements. They are utilized by assistive technology such as screen readers. Should the label texts need to be customised, they can be found within the **globals** object in [*properties.schema*](https://github.com/mike-st/adapt-carousel-menu/blob/master/properties.schema).   
+
 <div float align=right><a href="#top">Back to Top</a></div>
 
 ## Limitations
