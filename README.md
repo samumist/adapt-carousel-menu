@@ -35,14 +35,16 @@ This is a Carousel type menu which is different from the box styled menu when yo
 ### Adding a Custom Carousel Header Menu Image
 To add a custom carousel header menu image please use the following coding in the Custom CSS/Less Project settings or add an image in your theme called BackgroundA.jpg.
 
+<p><strong>Code example</strong></p>
+<p style="color:#990000"><strong>.menu .menu-header { background: url('https://www.adaptlearning.org/wp-content/uploads/2015/12/header_image.jpg') !important;}</strong></p>
+
 <img src="https://raw.githubusercontent.com/mike-st/adapt-carousel-menu/master/carousel-custom-header-image.jpg" alt="Custom Carousel Header Menu Image" width="768" height="389" border="10" />
 
 ### Modifing the default text description for the Menu Item Buttons (eg. click or tap text)
 To add a custom default text description for the menu item buttons and remove the click or tap verbage. Please use the following coding in the Custom CSS/Less Project settings.
 
-.menu-item-button:after {
-    content: 'Cliquez ou tapez sur Voir pour commencer.';
-}
+<p><strong>Code example</strong></p>
+<p style="color:#990000"><strong>.menu-item-button:after {content: 'Cliquez ou tapez sur Voir pour commencer.';}</strong></p>
 
 <img src="https://raw.githubusercontent.com/mike-st/adapt-carousel-menu/master/carousel-custom-language-image.jpg" alt="Modifing the click or tap text for the menu item buttons" width="768" height="389" border="10" />
 
